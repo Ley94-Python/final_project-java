@@ -1,0 +1,31 @@
+package org.example;
+
+import com.sun.source.util.SourcePositions;
+
+import java.sql.SQLOutput;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Person person1 = new Person("Naomi", "Campbell", 25, "female", "negroid", "brown", 59, 179, "Victoria Secrets");
+        Person person2 = new Person("Naomi", "Campbell", 25, "female", "negroid", "brown", 59, 179, "Victoria Secrets");
+        Person person3 = new Person("Naomi", "Campbell", 19, "female", "europoid", "blue", 59, 179, "Victoria Secrets");
+
+
+        System.out.println(person1.hashCode());
+        System.out.println(person2.hashCode());
+        System.out.println(person3.hashCode());
+
+        System.out.println(person1.equals(person2));
+
+        Set<Person> persons = new HashSet<>();
+        persons.add(person1);
+        persons.add(person2);
+        persons.add(person3);
+
+        System.out.println(persons);
+
+
+    }
+}
