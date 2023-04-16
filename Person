@@ -1,0 +1,48 @@
+package org.example;
+
+import java.util.Objects;
+
+public class Person {
+
+
+    public String name;
+    public String lastname;
+    public int age;
+    public String sex;
+    public String race;
+    public String eyesColor;
+    public int weight;
+    public int growth;
+    public String modelAgency;
+
+    public Person(String name, String lastname, int age, String  sex, String race, String eyesColor, int weight, int growth, String modelAgency){
+        this.name = name;
+        this.lastname = lastname;
+        this.age = age;
+        this.sex = sex;
+        this.race = race;
+        this.eyesColor = eyesColor;
+        this.weight = weight;
+        this.growth = growth;
+        this.modelAgency = modelAgency;
+    }
+    
+    public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        boolean objIsPerson = obj instanceof Person;
+        if(!objIsPerson) {
+            return false;
+        }
+        Person anotherPerson = (Person) obj;
+        return Objects.equals(name, anotherPerson.name) && age == anotherPerson.age;
+    }
+    public int hashCode() {
+        return Objects.hash(name, lastname, age);
+    }
+    public String toString() {
+        return String.format("%s  %s [%d]", name, lastname, age);
+    }
+
+}
